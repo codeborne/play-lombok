@@ -4,16 +4,15 @@ To install it you can download the zip file and unzip it to your modules directo
 
 Then add this to your dependencies.yml
 
-   - play.module -> lombok 1.2.3
-   - org.projectlombok -> lombok 0.10.0 (or any version of Lombok you want)
-   
-repositories:
-  - play-modules :
-        type:       http
-        artifact:   "http://play-modules.herokuapp.com/zips/[module]-[revision].zip"
-        contains:
-                    - play.module -> *
+   - play-codeborne -> lombok 1.2.5
 
-This has been tested with Play! 1.2.2 and 1.2.3
+repositories:
+    - codeborne:
+        type: http
+        artifact: https://repo.codeborne.com/play-[module]/[module]-[revision].zip
+        contains:
+            - play-codeborne -> *
+
+This has been tested with Play! 1.4.x
 
 You will still need to install Lombok in your IDE, if you are using one.

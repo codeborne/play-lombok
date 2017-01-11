@@ -1,7 +1,7 @@
-import os, os.path
+import os, os.path, glob
 
 MODULE = 'lombok'
-VERSION = '1.2.3'
+VERSION = '1.2.5'
 
 # Commands that are specific to your module
 
@@ -13,20 +13,13 @@ def execute(**kargs):
     args = kargs.get("args")
     env = kargs.get("env")
 
-def findjar(libDir):
-    for name in os.listdir(libDir):
-        if name.find('lombok-') == 0:
-            return os.path.join(libDir, name)
-    return ''
-
 # This will be executed before any command (new, run...)
 def before(**kargs):
     command = kargs.get("command")
     app = kargs.get("app")
     args = kargs.get("args")
     env = kargs.get("env")
-    lombokJar = findjar(os.path.join(app.path, 'lib'))
-
+    lombokJar = glob.glob('modules/lombok*/lib/lombok*.jar')[0]
     args.append('-javaagent:' + lombokJar + '=ECJ')
 
 
