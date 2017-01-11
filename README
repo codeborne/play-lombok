@@ -4,7 +4,7 @@ To install it you can download the zip file and unzip it to your modules directo
 
 Then add this to your dependencies.yml
 
-   - play-codeborne -> lombok 1.2.5
+   - play-codeborne -> lombok 1.2.6
 
 repositories:
     - codeborne:

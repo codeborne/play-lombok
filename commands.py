@@ -1,7 +1,7 @@
 import os, os.path, glob
 
 MODULE = 'lombok'
-VERSION = '1.2.5'
+VERSION = '1.2.6'
 
 # Commands that are specific to your module
 
