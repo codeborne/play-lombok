@@ -21,7 +21,7 @@ def before(**kargs):
     env = kargs.get("env")
 
     if command in ["run", "start", "precompile"]:
-        lombokJar = glob.glob('modules/lombok*/lib/lombok*.jar')[0]
+        lombokJar = glob.glob(app.path + '/modules/lombok*/lib/lombok*.jar')[0]
         args.append('-javaagent:' + lombokJar + '=ECJ')
 
 # This will be executed after any command (new, run...)
